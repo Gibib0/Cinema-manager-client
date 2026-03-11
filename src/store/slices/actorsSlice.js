@@ -1,7 +1,7 @@
 import {createSlice, nanoid} from '@reduxjs/toolkit'
 
 const initialState = [
-	{id: '1', name: 'Brad Pitt'}
+	{id: '1', name: 'Brad Pitt'},
 	{id: '2', name: 'Johnny Depp'}
 ]
 
@@ -35,5 +35,5 @@ const actorsSlice = createSlice({
 	}
 })
 
-export const (addActor, deleteActor, updateActor) = actorsSlice.actions
+export const {addActor, deleteActor, updateActor} = actorsSlice.actions
 export const actorsReducer = actorsSlice.reducer
