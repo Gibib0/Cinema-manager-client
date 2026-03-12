@@ -5,7 +5,7 @@ function ActorsItem() {
 	const {id} = useParams()
 
 	const actor = useSelector(state => 
-		state.actorList.find(a => a.id === id)
+		state.actorsList.find(a => a.id === id)
 	)
 
 	if (!actor) return <div>No actor</div>

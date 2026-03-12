@@ -4,67 +4,36 @@ import { Outlet } from "react-router-dom"
 // =============================
 import Header from "./Header/Header"
 import NavBar from "./Navigation/NavBar"
-import CinemaService from "./Service/CinemaService"
 import Footer from "./Footer/Footer"
 
 function Layout() {
 	return (
-		<Box>
-			<Grid container direction='column'>
-				<Grid
-					item
-					lg={12}
-					md={12}
-					xl={12}
-					sm={12}
-					xs={12}
-				>
+		<Box sx={{ width: '100%', minHeight: '100vh' }}>
+			<Grid container direction='column' sx={{minHeight: '100vh'}}>
+				<Grid item>
 					<Header />
 				</Grid>
-				<Grid
-					container
-				>
-					<Grid
-						item
-						lg={2}
-						md={2}
-						xl={2}
-						sm={2}
-						xs={2}
-					>
-						<NavBar />
-					</Grid>
-					<Grid
-						item
-						lg={6}
-						md={6}
-						xl={6}
-						sm={6}
-						xs={6}
-					>
-						<Outlet />
-					</Grid>
-					<Grid
-						item
-						lg={4}
-						md={4}
-						xl={4}
-						sm={4}
-						xs={4}
-					>
-						<CinemaService />
+
+				<Grid sx={{flex: 1}}>
+					<Grid container>
+						<Grid size={{ xs: 2 }} sx={{ border: '4px solid green', p: 2 }}>
+              <NavBar />
+            </Grid>
+
+						<Grid size={{ xs: 7 }} sx={{ border: '4px solid red', p: 2 }}>
+              <Outlet />
+            </Grid>
+
+						<Grid size={{ xs: 3 }} sx={{ border: '4px solid orange', p: 2 }}>
+              <h2>Service</h2>
+							<p>label required</p>
+            </Grid>
 					</Grid>
 				</Grid>
-				<Grid
-						item
-						lg={12}
-						md={12}
-						xl={12}
-						sm={12}
-						xs={12}
-					>
-						<Footer />
-					</Grid>
+
+				<Grid item>
+          <Footer />
+        </Grid>
 			</Grid>
 		</Box>
 	)

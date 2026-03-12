@@ -17,7 +17,7 @@ const styles = {
 		maxHeight: '100%',
 		position: 'absolute',
 		left: '50%',
-		transform: 'translate{-50%, 0}',
+		transform: 'translate(-50%, 0)',
 		objectFit: 'contain'
 	}
 }

@@ -16,15 +16,15 @@ function App() {
     <Router>
       <Routes>
         <Route path='/' element={<Layout />}>
-          <Route path='/movies/*' element={<Movies />} />
-          <Route path='/actors/*' element={<Actors />} />
-          <Route path='/directors/*' element={<Directors />} />
-          <Route path='/studios/*' element={<Studios />} />
-          <Route path='/' element={<HomePage />} />
+          <Route index element={<HomePage />} />  
+          <Route path='movies/*' element={<Movies />} />
+          <Route path='actors/*' element={<Actors />} />
+          <Route path='directors/*' element={<Directors />} />
+          <Route path='studios/*' element={<Studios />} />
           <Route
             path='*'
             element={<Navigate to='/movies'
-            replace={true}/>}/>
+            replace />}/>
         </Route>
       </Routes>
     </Router>

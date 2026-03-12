@@ -13,10 +13,25 @@ export const db = {
     }
   ],
 
-  actors: [],
+  actors: [
+    {
+      id: "1",
+      name: 'Joaquin Phoenix'
+    }
+  ],
 
-  directors: [],
+  directors: [
+    {
+      id: "1",
+      name: 'Steven Spielberg'
+    }
+  ],
 
-  studios: []
+  studios: [
+    {
+      id: "1",
+      name: 'Universal Pictures'
+    }
+  ]
 
 };

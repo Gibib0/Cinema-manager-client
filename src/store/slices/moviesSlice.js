@@ -10,7 +10,6 @@ const moviesSlice = createSlice({
 				state.push(action.payload)
 				db.movies.push(action.payload)
 			},
-
 			prepare(movie) {
 				return {
 					payload: {
@@ -23,18 +22,18 @@ const moviesSlice = createSlice({
 	},
 
 	deleteMovie(state, action) {
-      const id = action.payload;
-      const index = state.findIndex(m => m.id === id);
+    const id = action.payload;
+    const index = state.findIndex(m => m.id === id);
 
-      if (index !== -1) {
-        state.splice(index, 1);
-        db.movies = db.movies.filter(m => m.id !== id);
-      }
-    },
+    if (index !== -1) {
+      state.splice(index, 1);
+      db.movies = db.movies.filter(m => m.id !== id);
+    }
+  },
 
 	updateMovie(state, action) {
 		const {id, data} = action.payload
-		const movie = state = state.find(m => m.id === id)
+		const movie = state.find(m => m.id === id)
 
 		if (movie) {
 			Object.assign(movie, data)
@@ -43,9 +42,6 @@ const moviesSlice = createSlice({
 })
 
 export const {
-	addMovie,
-	deleteMovie, 
-	updateMovie
-} = moviesSlice.actions
+	addMovie, deleteMovie, updateMovie} = moviesSlice.actions
 
 export const moviesReducer = moviesSlice.reducer
